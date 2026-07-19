@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unplugged Chile â Fondecyt Regular NÂº 1181724</title>
+  <meta name="description" content="Yo SÃ© Lo Que Quiero (YSLQQ) â AdaptaciÃ³n y evaluaciÃ³n de efectividad del programa Unplugged de prevenciÃ³n de consumo de drogas entre estudiantes chilenos." />
+  <meta property="og:title" content="Unplugged Chile â Fondecyt Regular NÂº 1181724" />
+  <meta property="og:description" content="Yo SÃ© Lo Que Quiero â Programa escolar de prevenciÃ³n de consumo de sustancias en Chile." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root {
+      --primary: #1a5276;
+      --primary-light: #2471a3;
+      --accent: #148f77;
+      --accent-light: #1abc9c;
+      --bg: #f8f9fa;
+      --card: #ffffff;
+      --text: #212529;
+      --text-muted: #6c757d;
+      --border: #dee2e6;
+      --hero-bg: #0d3b6e;
+      --hero-accent: #17a589;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    /* ââ NAV ââ */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--hero-bg);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 1.5rem; height: 58px;
+    }
+    .nav-brand {
+      font-weight: 700; font-size: 1.1rem; color: #fff; text-decoration: none;
+    }
+    .nav-brand span { color: var(--hero-accent); }
+    .nav-links { display: flex; gap: 0.2rem; align-items: center; }
+    .nav-links a {
+      color: rgba(255,255,255,0.82); text-decoration: none;
+      font-size: 0.82rem; font-weight: 500; letter-spacing: 0.02em;
+      padding: 0.35rem 0.65rem; border-radius: 4px; transition: all 0.18s;
+    }
+    .nav-links a:hover { color: #fff; background: rgba(255,255,255,0.12); }
+    .lang-btn {
+      background: var(--hero-accent); color: #fff !important;
+      border-radius: 4px; padding: 0.3rem 0.75rem !important;
+      font-weight: 600 !important; margin-left: 0.6rem;
+      cursor: pointer; border: none; font-size: 0.82rem;
+      letter-spacing: 0.04em;
+    }
+    .lang-btn:hover { background: var(--accent-light) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: 0.3s; }
+
+    /* ââ HERO ââ */
+    .hero {
+      background: linear-gradient(135deg, var(--hero-bg) 0%, #154360 60%, #0e6655 100%);
+      color: #fff; padding: 5rem 1.5rem 4rem;
+      text-align: center;
+    }
+    .hero-tag {
+      display: inline-block; background: rgba(26,188,156,0.18);
+      border: 1px solid var(--hero-accent); color: var(--accent-light);
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 0.3rem 0.9rem;
+      border-radius: 20px; margin-bottom: 1.4rem;
+    }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 0.6rem; }
+    .hero h1 span { color: var(--accent-light); }
+    .hero-sub { font-size: clamp(1.05rem, 2.5vw, 1.3rem); color: rgba(255,255,255,0.78); margin-bottom: 2rem; font-weight: 400; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 2.5rem; }
+    .hero-pill {
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 30px; padding: 0.45rem 1.2rem;
+      font-size: 0.85rem; color: rgba(255,255,255,0.9);
+    }
+    .hero-pill strong { color: #fff; }
+    .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; padding: 0.7rem 1.8rem;
+      border-radius: 6px; text-decoration: none; font-weight: 600;
+      font-size: 0.92rem; transition: all 0.18s;
+    }
+    .btn-primary { background: var(--hero-accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-light); transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.4); }
+    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+    /* ââ SECTIONS ââ */
+    section { padding: 4.5rem 1.5rem; }
+    .section-inner { max-width: 1000px; margin: 0 auto; }
+    .section-alt { background: #fff; }
+    .section-title {
+      font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800;
+      color: var(--primary); margin-bottom: 0.4rem;
+    }
+    .section-subtitle { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2.5rem; }
+    .title-bar { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.4rem; }
+    .title-bar::after { content: ''; flex: 1; height: 2px; background: linear-gradient(90deg, var(--accent), transparent); }
+    p { margin-bottom: 1rem; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ââ ABOUT ââ */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .stat-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .stat-card {
+      background: var(--hero-bg); color: #fff;
+      border-radius: 10px; padding: 1.2rem; text-align: center;
+    }
+    .stat-card .num { font-size: 2rem; font-weight: 800; color: var(--accent-light); }
+    .stat-card .lbl { font-size: 0.78rem; color: rgba(255,255,255,0.75); margin-top: 0.2rem; }
+
+    /* ââ OBJECTIVES ââ */
+    .obj-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+    .obj-list li {
+      display: flex; gap: 1rem; align-items: flex-start;
+      background: #fff; border-radius: 10px; padding: 1.2rem 1.4rem;
+      border-left: 4px solid var(--accent); box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .obj-num {
+      background: var(--primary); color: #fff;
+      border-radius: 50%; width: 28px; height: 28px; min-width: 28px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.82rem;
+    }
+
+    /* ââ METHODOLOGY ââ */
+    .method-phases { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin-bottom: 2.5rem; }
+    .phase-card {
+      background: #fff; border-radius: 12px; padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07); border-top: 4px solid var(--primary-light);
+    }
+    .phase-card.accent-border { border-top-color: var(--accent); }
+    .phase-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
+    .phase-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
+    .phase-card p { font-size: 0.88rem; color: var(--text-muted); margin: 0; }
+    .program-structure {
+      background: linear-gradient(135deg, var(--hero-bg), #0e6655);
+      color: #fff; border-radius: 14px; padding: 2rem;
+    }
+    .program-structure h3 { margin-bottom: 1rem; color: var(--accent-light); font-size: 1.1rem; }
+    .sessions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .session-block { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 1rem; text-align: center; }
+    .session-block .s-num { font-size: 1.6rem; font-weight: 800; color: var(--accent-light); }
+    .session-block .s-lbl { font-size: 0.75rem; color: rgba(255,255,255,0.8); margin-top: 0.3rem; }
+    .trial-info { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+    .trial-box { background: #fff; border-radius: 10px; padding: 1.2rem; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+    .trial-box h4 { color: var(--primary); font-size: 0.9rem; margin-bottom: 0.5rem; }
+    .trial-box p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
+
+    /* ââ TEAM ââ */
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; }
+    .team-card {
+      background: #fff; border-radius: 14px; padding: 1.8rem 1.2rem;
+      text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .team-card:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0,0,0,0.11); }
+    .team-avatar {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 1.5rem; font-weight: 700;
+      margin: 0 auto 1rem;
+    }
+    .team-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--primary); margin-bottom: 0.3rem; }
+    .team-card .role { font-size: 0.78rem; color: var(--accent); font-weight: 600; margin-bottom: 0.3rem; }
+    .team-card .inst { font-size: 0.78rem; color: var(--text-muted); }
+
+    /* ââ RESULTS ââ */
+    .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
+    .result-card {
+      background: #fff; border-radius: 12px; padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07); border-top: 4px solid var(--accent);
+    }
+    .result-card h3 { font-size: 0.9rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem; }
+    .result-stat { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.6rem; }
+    .result-stat .pct { font-size: 1.8rem; font-weight: 800; color: var(--accent); }
+    .result-stat .desc { font-size: 0.82rem; color: var(--text-muted); }
+    .efficacy-table {
+      width: 100%; border-collapse: collapse; font-size: 0.88rem;
+    }
+    .efficacy-table th {
+      background: var(--primary); color: #fff; padding: 0.7rem 1rem;
+      text-align: left; font-weight: 600;
+    }
+    .efficacy-table td { padding: 0.7rem 1rem; border-bottom: 1px solid var(--border); }
+    .efficacy-table tr:last-child td { border-bottom: none; }
+    .efficacy-table tr:nth-child(even) td { background: #f8f9fa; }
+    .sig { color: var(--accent); font-weight: 700; }
+    .table-wrap { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+
+    /* ââ PUBLICATIONS ââ */
+    .pub-list { display: flex; flex-direction: column; gap: 1.2rem; }
+    .pub-card {
+      background: #fff; border-radius: 12px; padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      border-left: 5px solid var(--primary-light);
+      transition: border-color 0.18s;
+    }
+    .pub-card:hover { border-left-color: var(--accent); }
+    .pub-year { font-size: 0.75rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4rem; }
+    .pub-title { font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; line-height: 1.35; }
+    .pub-authors { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+    .pub-journal { font-size: 0.85rem; color: var(--text); font-style: italic; margin-bottom: 0.8rem; }
+    .pub-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      color: var(--primary-light); font-size: 0.82rem; font-weight: 600;
+      text-decoration: none; transition: color 0.18s;
+    }
+    .pub-link:hover { color: var(--accent); }
+    .pub-badge {
+      display: inline-block; background: #e8f6f3; color: var(--accent);
+      font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.6rem;
+      border-radius: 10px; margin-left: 0.5rem;
+    }
+
+    /* ââ CONTACT ââ */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .contact-info p { margin-bottom: 0.8rem; }
+    .contact-info a { color: var(--primary-light); text-decoration: none; }
+    .contact-info a:hover { color: var(--accent); }
+    .contact-detail { display: flex; align-items: flex-start; gap: 0.7rem; margin-bottom: 1rem; }
+    .c-icon { font-size: 1.1rem; margin-top: 0.1rem; }
+    .funding-box {
+      background: #fff; border-radius: 12px; padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07); border-top: 3px solid var(--primary);
+    }
+    .funding-box h3 { color: var(--primary); margin-bottom: 1rem; font-size: 0.95rem; }
+    .funder-row { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.7rem; font-size: 0.88rem; }
+    .funder-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+
+    /* ââ FOOTER ââ */
+    footer {
+      background: var(--hero-bg); color: rgba(255,255,255,0.65);
+      text-align: center; padding: 2rem 1.5rem; font-size: 0.82rem;
+    }
+    footer a { color: var(--accent-light); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ââ RESPONSIVE ââ */
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 58px; left: 0; right: 0; background: var(--hero-bg); padding: 1rem; gap: 0.4rem; }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .sessions-grid { grid-template-columns: 1fr; }
+      .trial-info { grid-template-columns: 1fr; }
+      .stat-cards { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ââââââââââââââââ NAV ââââââââââââââââ -->
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#inicio"><span>Unplugged</span> Chile</a>
+    <div class="nav-links" id="navLinks">
+      <a href="#sobre" data-es="Sobre el Proyecto" data-en="About">Sobre el Proyecto</a>
+      <a href="#objetivos" data-es="Objetivos" data-en="Objectives">Objetivos</a>
+      <a href="#metodologia" data-es="MetodologÃ­a" data-en="Methodology">MetodologÃ­a</a>
+      <a href="#equipo" data-es="Equipo" data-en="Team">Equipo</a>
+      <a href="#resultados" data-es="Resultados" data-en="Results">Resultados</a>
+      <a href="#publicaciones" data-es="Publicaciones" data-en="Publications">Publicaciones</a>
+      <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+      <button class="lang-btn" id="langToggle" onclick="toggleLang()" aria-label="Switch language">EN</button>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ââââââââââââââââ HERO ââââââââââââââââ -->
+<section class="hero" id="inicio">
+  <div class="hero-tag" data-es="Fondecyt Regular NÂº 1181724" data-en="Fondecyt Regular NÂº 1181724">Fondecyt Regular NÂº 1181724</div>
+  <h1 data-es='"Yo SÃ© Lo Que Quiero"' data-en='"I Know What I Want"'>"Yo SÃ© Lo Que Quiero"</h1>
+  <p class="hero-sub" data-es="AdaptaciÃ³n y evaluaciÃ³n de efectividad del programa Unplugged de prevenciÃ³n de consumo de sustancias entre adolescentes chilenos" data-en="Adaptation and effectiveness evaluation of the Unplugged drug use prevention program among Chilean adolescents">
+    AdaptaciÃ³n y evaluaciÃ³n de efectividad del programa Unplugged de prevenciÃ³n de consumo de sustancias entre adolescentes chilenos
+  </p>
+  <div class="hero-meta">
+    <div class="hero-pill"><strong data-es="IP:" data-en="PI:">IP:</strong> <span data-es="Jorge Gaete, U. de los Andes" data-en="Jorge Gaete, U. de los Andes">Jorge Gaete, U. de los Andes</span></div>
+    <div class="hero-pill"><strong>ANID</strong> Â· <span data-es="US$ 378.000" data-en="US$ 378,000">US$ 378.000</span></div>
+    <div class="hero-pill"><strong>ClinicalTrials.gov</strong> Â· NCT04236999 Â· NCT04566627</div>
+  </div>
+  <div class="hero-cta">
+    <a href="#sobre" class="btn btn-primary" data-es="Conocer el proyecto" data-en="Learn more">Conocer el proyecto</a>
+    <a href="#publicaciones" class="btn btn-outline" data-es="Ver publicaciones" data-en="View publications">Ver publicaciones</a>
+  </div>
+</section>
+
+<!-- ââââââââââââââââ ABOUT ââââââââââââââââ -->
+<section id="sobre" class="section-alt">
+  <div class="section-inner">
+    <div class="title-bar">
+      <h2 class="section-title" data-es="Sobre el Proyecto" data-en="About the Project">Sobre el Proyecto</h2>
+    </div>
+    <p class="section-subtitle" data-es="Â¿QuÃ© es Unplugged y por quÃ© en Chile?" data-en="What is Unplugged and why Chile?">Â¿QuÃ© es Unplugged y por quÃ© en Chile?</p>
+    <div class="about-grid">
+      <div>
+        <p data-es="&lt;strong&gt;Unplugged&lt;/strong&gt; es un programa universal de prevenciÃ³n del consumo de tabaco, alcohol y cannabis basado en el Modelo de Influencia Social Integral (&lt;em&gt;Comprehensive Social Influence Model&lt;/em&gt;). Fue desarrollado en Europa y evaluado con Ã©xito en siete paÃ­ses europeos en el marco del proyecto EU-Dap." data-en="&lt;strong&gt;Unplugged&lt;/strong&gt; is a universal school-based prevention program targeting tobacco, alcohol, and cannabis use, grounded in the Comprehensive Social Influence Model. Originally developed in Europe, it was successfully evaluated across seven European countries within the EU-Dap project.">
+          <strong>Unplugged</strong> es un programa universal de prevenciÃ³n del consumo de tabaco, alcohol y cannabis basado en el Modelo de Influencia Social Integral (<em>Comprehensive Social Influence Model</em>). Fue desarrollado en Europa y evaluado con Ã©xito en siete paÃ­ses europeos en el marco del proyecto EU-Dap.
+        </p>
+        <p data-es="En Chile, el consumo de sustancias en adolescentes es una preocupaciÃ³n de salud pÃºblica relevante. SegÃºn datos nacionales, el 35,6% de los estudiantes de 8Â° bÃ¡sico a 4Â° medio reportaron consumo de alcohol en el Ãºltimo mes, y 1 de cada 5 estudiantes reportÃ³ consumo de cannabis en los Ãºltimos 30 dÃ­as." data-en="In Chile, adolescent substance use is a significant public health concern. National data indicate that 35.6% of students from 8th to 12th grade reported alcohol use in the past month, and 1 in 5 students reported cannabis use in the past 30 days.">
+          En Chile, el consumo de sustancias en adolescentes es una preocupaciÃ³n de salud pÃºblica relevante. SegÃºn datos nacionales, el 35,6% de los estudiantes de 8Â° bÃ¡sico a 4Â° medio reportaron consumo de alcohol en el Ãºltimo mes, y 1 de cada 5 estudiantes reportÃ³ consumo de cannabis en los Ãºltimos 30 dÃ­as.
+        </p>
+        <p data-es="Este proyecto fue el primer ensayo controlado aleatorizado de un programa de prevenciÃ³n escolar del consumo de sustancias realizado en Chile, y la primera evaluaciÃ³n del programa Unplugged en AmÃ©rica Latina hispanohablante." data-en="This project represents the first randomized controlled trial of a school-based substance use prevention program conducted in Chile, and the first evaluation of the Unplugged program in Spanish-speaking Latin America.">
+          Este proyecto fue el primer ensayo controlado aleatorizado de un programa de prevenciÃ³n escolar del consumo de sustancias realizado en Chile, y la primera evaluaciÃ³n del programa Unplugged en AmÃ©rica Latina hispanohablante.
+        </p>
+      </div>
+      <div>
+        <div class="stat-cards">
+          <div class="stat-card">
+            <div class="num">70</div>
+            <div class="lbl" data-es="Escuelas participantes" data-en="Participating schools">Escuelas participantes</div>
+          </div>
+          <div class="stat-card">
+            <div class="num">8.400</div>
+            <div class="lbl" data-es="Estudiantes" data-en="Students">Estudiantes</div>
+          </div>
+          <div class="stat-card">
+            <div class="num">12</div>
+            <div class="lbl" data-es="Sesiones del programa" data-en="Program sessions">Sesiones del programa</div>
+          </div>
+          <div class="stat-card">
+            <div class="num">5</div>
+            <div class="lbl" data-es="AÃ±os de investigaciÃ³n" data-en="Years of research">AÃ±os de investigaciÃ³n</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ââââââââââââââââ OBJECTIVES ââââââââââââââââ -->
+<section id="objetivos">
+  <div class="section-inner">
+    <div class="title-bar">
+      <h2 class="section-title" data-es="Objetivos" data-en="Objectives">Objetivos</h2>
+    </div>
+    <p class="section-subtitle" data-es="Fases de investigaciÃ³n y metas del proyecto" data-en="Research phases and project goals">Fases de investigaciÃ³n y metas del proyecto</p>
+    <ul class="obj-list">
+      <li>
+        <div class="obj-num">1</div>
+        <div>
+          <strong data-es="AdaptaciÃ³n cultural" data-en="Cultural adaptation">AdaptaciÃ³n cultural</strong>
+          <br/><span data-es="Adaptar culturalmente el programa Unplugged al contexto chileno, asegurando pertinencia y aceptabilidad en escuelas con alta vulnerabilidad socioeconÃ³mica (IVE-SINAE â¥ 70%)." data-en="Culturally adapt the Unplugged program to the Chilean context, ensuring relevance and acceptability in schools with high socioeconomic vulnerability (IVE-SINAE â¥ 70%).">Adaptar culturalmente el programa Unplugged al contexto chileno, asegurando pertinencia y aceptabilidad en escuelas con alta vulnerabilidad socioeconÃ³mica (IVE-SINAE â¥ 70%).</span>
+        </div>
+      </li>
+      <li>
+        <div class="obj-num">2</div>
+        <div>
+          <strong data-es="ValidaciÃ³n del instrumento" data-en="Instrument validation">ValidaciÃ³n del instrumento</strong>
+          <br/><span data-es="Validar el Cuestionario del Proyecto Europeo de PrevenciÃ³n de la DrogadicciÃ³n (EU-Dap) en adolescentes chilenos para tamizaje de consumo de sustancias y evaluaciÃ³n de factores de riesgo y protecciÃ³n." data-en="Validate the European Drug Addiction Prevention Trial Questionnaire (EU-Dap) in Chilean adolescents for substance use screening and assessment of risk and protective factors.">Validar el Cuestionario del Proyecto Europeo de PrevenciÃ³n de la DrogadicciÃ³n (EU-Dap) en adolescentes chilenos para tamizaje de consumo de sustancias y evaluaciÃ³n de factores de riesgo y protecciÃ³n.</span>
+        </div>
+      </li>
+      <li>
+        <div class="obj-num">3</div>
+        <div>
+          <strong data-es="Estudio piloto" data-en="Pilot study">Estudio piloto</strong>
+          <br/><span data-es="Evaluar la aceptabilidad, factibilidad y fidelidad de la versiÃ³n adaptada ("Yo SÃ© Lo Que Quiero") mediante un estudio piloto aleatorizado en 6 escuelas de Santiago." data-en='Evaluate the acceptability, feasibility and fidelity of the adapted version ("Yo SÃ© Lo Que Quiero") through a pilot randomized study in 6 schools in Santiago.'>Evaluar la aceptabilidad, factibilidad y fidelidad de la versiÃ³n adaptada ("Yo SÃ© Lo Que Quiero") mediante un estudio piloto aleatorizado en 6 escuelas de Santiago.</span>
+        </div>
+      </li>
+      <li>
+        <div class="obj-num">4</div>
+        <div>
+          <strong data-es="Ensayo principal de efectividad" data-en="Main effectiveness trial">Ensayo principal de efectividad</strong>
+          <br/><span data-es="Evaluar la efectividad del programa YSLQQ en la reducciÃ³n del consumo de alcohol (resultado primario) mediante un ensayo clÃ­nico aleatorizado por conglomerados en 70 escuelas, con 8.400 estudiantes de 6Â° y 7Â° bÃ¡sico." data-en="Evaluate the effectiveness of the YSLQQ program in reducing alcohol use (primary outcome) through a cluster randomized controlled trial in 70 schools, with 8,400 students in 6th and 7th grades.">Evaluar la efectividad del programa YSLQQ en la reducciÃ³n del consumo de alcohol (resultado primario) mediante un ensayo clÃ­nico aleatorizado por conglomerados en 70 escuelas, con 8.400 estudiantes de 6Â° y 7Â° bÃ¡sico.</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ââââââââââââââââ METHODOLOGY ââââââââââââââââ -->
+<section id="metodologia" class="section-alt">
+  <div class="section-inner">
+    <div class="title-bar">
+      <h2 class="section-title" data-es="MetodologÃ­a" data-en="Methodology">MetodologÃ­a</h2>
+    </div>
+    <p class="section-subtitle" data-es="DiseÃ±o del programa y del ensayo clÃ­nico" data-en="Program design and clinical trial design">DiseÃ±o del programa y del ensayo clÃ­nico</p>
+
+    <div class="program-structure">
+      <h3 data-es="El Programa: 12 Sesiones" data-en="The Program: 12 Sessions">El Programa: 12 Sesiones</h3>
+      <div class="sessions-grid">
+        <div class="session-block">
+          <div class="s-num">4</div>
+          <div class="s-lbl" data-es="Sesiones de Conocimientos y Actitudes" data-en="Knowledge & Attitudes sessions">Sesiones de Conocimientos y Actitudes</div>
+        </div>
+        <div class="session-block">
+          <div class="s-num">4</div>
+          <div class="s-lbl" data-es="Sesiones de Habilidades Interpersonales" data-en="Interpersonal Skills sessions">Sesiones de Habilidades Interpersonales</div>
+        </div>
+        <div class="session-block">
+          <div class="s-num">4</div>
+          <div class="s-lbl" data-es="Sesiones de Habilidades Intrapersonales" data-en="Intrapersonal Skills sessions">Sesiones de Habilidades Intrapersonales</div>
+        </div>
+      </div>
+      <p style="margin-top:1.2rem; color:rgba(255,255,255,0.8); font-size:0.9rem;" data-es="Cada sesiÃ³n dura 45 minutos y es impartida por docentes capacitados. El programa incluye ademÃ¡s un componente para padres: 3 talleres vespertinos." data-en="Each session lasts 45 minutes and is delivered by trained teachers. The program also includes a parental component: 3 evening workshops.">
+        Cada sesiÃ³n dura 45 minutos y es impartida por docentes capacitados. El programa incluye ademÃ¡s un componente para padres: 3 talleres vespertinos.
+      </p>
+    </div>
+
+    <div class="method-phases" style="margin-top:2rem;">
+      <div class="phase-card">
+        <div class="phase-icon">ð«</div>
+        <h3 data-es="DiseÃ±o del ensayo" data-en="Trial design">DiseÃ±o del ensayo</h3>
+        <p data-es="Ensayo clÃ­nico aleatorizado por conglomerados (cRCT) de dos brazos, ciego simple (evaluadores ciegos), con asignaciÃ³n 1:1 a nivel de escuela." data-en="Two-arm, single-blind cluster randomized controlled trial (cRCT) with 1:1 allocation at school level.">Ensayo clÃ­nico aleatorizado por conglomerados (cRCT) de dos brazos, ciego simple (evaluadores ciegos), con asignaciÃ³n 1:1 a nivel de escuela.</p>
+      </div>
+      <div class="phase-card accent-border">
+        <div class="phase-icon">ð¯</div>
+        <h3 data-es="PoblaciÃ³n objetivo" data-en="Target population">PoblaciÃ³n objetivo</h3>
+        <p data-es="Estudiantes de 6Â° y 7Â° aÃ±o bÃ¡sico de escuelas con Ã­ndice de vulnerabilidad IVE-SINAE â¥ 70% en la RegiÃ³n Metropolitana de Santiago." data-en="6th and 7th grade students from schools with IVE-SINAE vulnerability index â¥ 70% in the Santiago Metropolitan Region.">Estudiantes de 6Â° y 7Â° aÃ±o bÃ¡sico de escuelas con Ã­ndice de vulnerabilidad IVE-SINAE â¥ 70% en la RegiÃ³n Metropolitana de Santiago.</p>
+      </div>
+      <div class="phase-card">
+        <div class="phase-icon">ð</div>
+        <h3 data-es="Resultado primario" data-en="Primary outcome">Resultado primario</h3>
+        <p data-es="Prevalencia de consumo de alcohol en los Ãºltimos 30 dÃ­as, medida con el Cuestionario EU-Dap validado en Chile." data-en="Prevalence of alcohol use in the past 30 days, measured with the EU-Dap questionnaire validated in Chile.">Prevalencia de consumo de alcohol en los Ãºltimos 30 dÃ­as, medida con el Cuestionario EU-Dap validado en Chile.</p>
+      </div>
+      <div class="phase-card accent-border">
+        <div class="phase-icon">ð¬</div>
+        <h3 data-es="Instrumento" data-en="Instrument">Instrumento</h3>
+        <p data-es="Cuestionario EU-Dap (European Drug Addiction Prevention Trial Questionnaire), validado por primera vez en AmÃ©rica Latina hispanohablante en este proyecto." data-en="EU-Dap Questionnaire (European Drug Addiction Prevention Trial Questionnaire), validated for the first time in Spanish-speaking Latin America within this project.">Cuestionario EU-Dap, validado por primera vez en AmÃ©rica Latina hispanohablante en este proyecto.</p>
+      </div>
+    </div>
+
+    <div class="trial-info">
+      <div class="trial-box">
+        <h4 data-es="Ensayo principal (NCT04236999)" data-en="Main trial (NCT04236999)">Ensayo principal (NCT04236999)</h4>
+        <p data-es="70 escuelas Â· 8.400 estudiantes Â· 35 por brazo Â· Registrado: 17 enero 2020" data-en="70 schools Â· 8,400 students Â· 35 per arm Â· Registered: January 17, 2020">70 escuelas Â· 8.400 estudiantes Â· 35 por brazo Â· Registrado: 17 enero 2020</p>
+      </div>
+      <div class="trial-box">
+        <h4 data-es="Estudio piloto (NCT04566627)" data-en="Pilot study (NCT04566627)">Estudio piloto (NCT04566627)</h4>
+        <p data-es="6 escuelas Â· 1.180 estudiantes Â· 6Â°, 7Â° y 8Â° bÃ¡sico Â· Santiago Â· Registrado: 01/03/2019" data-en="6 schools Â· 1,180 students Â· 6th, 7th and 8th grades Â· Santiago Â· Registered: 01/03/2019">6 escuelas Â· 1.180 estudiantes Â· 6Â°, 7Â° y 8Â° bÃ¡sico Â· Santiago Â· Registrado: 01/03/2019</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ââââââââââââââââ TEAM ââââââââââââââââ -->
+<section id="equipo">
+  <div class="section-inner">
+    <div class="title-bar">
+      <h2 class="section-title" data-es="Equipo Investigador" data-en="Research Team">Equipo Investigador</h2>
+    </div>
+    <p class="section-subtitle" data-es="Investigadores principales del proyecto" data-en="Principal investigators of the project">Investigadores principales del proyecto</p>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">JG</div>
+        <h3>Jorge Gaete</h3>
+        <div class="role" data-es="Investigador Principal" data-en="Principal Investigator">Investigador Principal</div>
+        <div class="inst">Universidad de los Andes Â· ISME</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">SR</div>
+        <h3>Saray RamÃ­rez</h3>
+        <div class="role" data-es="Co-Investigadora" data-en="Co-Investigator">Co-Investigadora</div>
+        <div class="inst">Universidad de los Andes Â· ISME</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">SG</div>
+        <h3>SofÃ­a Gana</h3>
+        <div class="role" data-es="Co-Investigadora" data-en="Co-Investigator">Co-Investigadora</div>
+        <div class="inst">Universidad de los Andes Â· ISME</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">DV</div>
+        <h3>Daniela Valenzuela</h3>
+        <div class="role" data-es="Co-Investigadora" data-en="Co-Investigator">Co-Investigadora</div>
+        <div class="inst">Universidad de los Andes Â· ISME</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">RA</div>
+        <h3>Ricardo Araya</h3>
+        <div class="role" data-es="Colaborador Internacional" data-en="International Collaborator">Colaborador Internacional</div>
+        <div class="inst">King's College London</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">GS</div>
+        <h3>Gabriel Salgado</h3>
+        <div class="role" data-es="Investigador Asociado" data-en="Associate Researcher">Investigador Asociado</div>
+        <div class="inst">ISME, Chile</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ââââââââââââââââ RESULTS ââââââââââââââââ -->
+<section id="resultados" class="section-alt">
+  <div class="section-inner">
+    <div class="title-bar">
+      <h2 class="section-title" data-es="Resultados" data-en="Results">Resultados</h2>
+    </div>
+    <p class="section-subtitle" data-es="Hallazgos del estudio piloto y de la validaciÃ³n del instrumento" data-en="Findings from the pilot study and instrument validation">Hallazgos del estudio piloto y de la validaciÃ³n del instrumento</p>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <h3 data-es="Aceptabilidad del programa" data-en="Program acceptability">Aceptabilidad del programa</h3>
+        <div class="result-stat"><span class="pct">49,6%</span><span class="desc" data-es="de estudiantes les gustaron las sesiones" data-en="of students liked the sessions">de estudiantes les gustaron las sesiones</span></div>
+        <div class="result-stat"><span class="pct">79,2%</span><span class="desc" data-es="aprendieron sobre los peligros de las sustancias" data-en="learned about the dangers of substances">aprendieron sobre los peligros de las sustancias</span></div>
+        <div class="result-stat"><span class="pct">65,8%</span><span class="desc" data-es="reportaron mÃ¡s habilidades para evitar el consumo" data-en="reported more skills to avoid substance use">reportaron mÃ¡s habilidades para evitar el consumo</span></div>
+        <div class="result-stat"><span class="pct">62,9%</span><span class="desc" data-es="se sintieron contentos o muy contentos con el programa" data-en="were happy or very happy with the program">se sintieron contentos o muy contentos con el programa</span></div>
+      </div>
+      <div class="result-card">
+        <h3 data-es="Fidelidad de implementaciÃ³n" data-en="Implementation fidelity">Fidelidad de implementaciÃ³n</h3>
+        <div class="result-stat"><span class="pct">73,9%</span><span class="desc" data-es="de las sesiones implementadas per protocolo" data-en="of sessions implemented per protocol">de las sesiones implementadas per protocolo</span></div>
+        <div class="result-stat" style="margin-top:0.5rem;">
+          <span style="font-size:1rem; color:var(--accent);">â</span>
+          <span class="desc" data-es="Las 12 sesiones se implementaron en todas las escuelas" data-en="All 12 sessions were delivered in all schools">Las 12 sesiones se implementaron en todas las escuelas</span>
+        </div>
+        <div class="result-stat" style="margin-top:0.5rem;">
+          <span style="font-size:1rem; color:var(--accent);">â</span>
+          <span class="desc" data-es="Adecuada aceptabilidad y factibilidad del programa" data-en="Adequate program acceptability and feasibility">Adecuada aceptabilidad y factibilidad del programa</span>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="color:var(--primary); margin-bottom:1rem; font-size:1.05rem;" data-es="Resultados de eficacia (estudio piloto â resultados secundarios)" data-en="Efficacy results (pilot study â secondary outcomes)">Resultados de eficacia (estudio piloto â resultados secundarios)</h3>
+    <div class="table-wrap">
+      <table class="efficacy-table">
+        <thead>
+          <tr>
+            <th data-es="Resultado" data-en="Outcome">Resultado</th>
+            <th data-es="OR (IC 95%)" data-en="OR (95% CI)">OR (IC 95%)</th>
+            <th data-es="Valor p" data-en="p-value">Valor p</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-es="Embriaguez en Ãºltimos 12 meses" data-en="Drunkenness in past 12 months">Embriaguez en Ãºltimos 12 meses</td>
+            <td>0,80 (0,69â0,93)</td>
+            <td class="sig">0,003</td>
+          </tr>
+          <tr>
+            <td data-es="Embriaguez en Ãºltimos 30 dÃ­as" data-en="Drunkenness in past 30 days">Embriaguez en Ãºltimos 30 dÃ­as</td>
+            <td>0,39 (0,21â0,72)</td>
+            <td class="sig">0,002</td>
+          </tr>
+          <tr>
+            <td data-es="Consumo de cannabis en Ãºltimos 30 dÃ­as" data-en="Cannabis use in past 30 days">Consumo de cannabis en Ãºltimos 30 dÃ­as</td>
+            <td>0,42 (0,21â0,83)</td>
+            <td class="sig">0,013</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.8rem;" data-es="OR: Odds Ratio ajustado. IC: Intervalo de Confianza. Resultados del estudio piloto (n=1.180). OR &lt; 1 indica reducciÃ³n en el grupo intervenciÃ³n." data-en="OR: Adjusted Odds Ratio. CI: Confidence Interval. Results from the pilot study (n=1,180). OR &lt; 1 indicates reduction in the intervention group.">
+      OR: Odds Ratio ajustado. IC: Intervalo de Confianza. Resultados del estudio piloto (n=1.180). OR &lt; 1 indica reducciÃ³n en el grupo intervenciÃ³n.
+    </p>
+  </div>
+</section>
+
+<!-- ââââââââââââââââ PUBLICATIONS ââââââââââââââââ -->
+<section id="publicaciones">
+  <div class="section-inner">
+    <div class="title-bar">
+      <h2 class="section-title" data-es="Publicaciones" data-en="Publications">Publicaciones</h2>
+    </div>
+    <p class="section-subtitle" data-es="ArtÃ­culos cientÃ­ficos derivados del proyecto" data-en="Scientific articles derived from the project">ArtÃ­culos cientÃ­ficos derivados del proyecto</p>
+    <div class="pub-list">
+
+      <div class="pub-card">
+        <div class="pub-year">2024 Â· BMC Public Health<span class="pub-badge">Open Access</span></div>
+        <div class="pub-title">Acceptability, feasibility and fidelity of the culturally adapted version of Unplugged ("Yo Se Lo Que Quiero"), a substance use preventive program among adolescents in Chile: a pilot randomized controlled study</div>
+        <div class="pub-authors">Salgado G, Gaete J, Gana S, Valenzuela D, Araya R</div>
+        <div class="pub-journal">BMC Public Health, 24:2026 (2024)</div>
+        <a href="https://doi.org/10.1186/s12889-024-19499-2" class="pub-link" target="_blank" rel="noopener">
+          ð DOI: 10.1186/s12889-024-19499-2
+        </a>
+        &nbsp;Â·&nbsp;
+        <a href="https://clinicaltrials.gov/study/NCT04566627" class="pub-link" target="_blank" rel="noopener">NCT04566627</a>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-year">2022 Â· Trials<span class="pub-badge">Open Access</span></div>
+        <div class="pub-title">The Unplugged program in Chile ("Yo SÃ© Lo Que Quiero") for substance use prevention among early adolescents: study protocol for a randomized controlled trial</div>
+        <div class="pub-authors">Gaete J, RamÃ­rez S, Gana S, Valenzuela D, Araya R</div>
+        <div class="pub-journal">Trials, 23:76 (2022)</div>
+        <a href="https://doi.org/10.1186/s13063-021-05904-3" class="pub-link" target="_blank" rel="noopener">
+          ð DOI: 10.1186/s13063-021-05904-3
+        </a>
+        &nbsp;Â·&nbsp;
+        <a href="https://clinicaltrials.gov/study/NCT04236999" class="pub-link" target="_blank" rel="noopener">NCT04236999</a>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-year">2021 Â· PLoS ONE<span class="pub-badge">Open Access</span></div>
+        <div class="pub-title">Validation of the European Drug Addiction Prevention Trial Questionnaire (EU-Dap) for substance use screening and to assess risk and protective factors among early adolescents in Chile</div>
+        <div class="pub-authors">RamÃ­rez S, Gana S, Godoy MI, Valenzuela D, Araya R, Gaete J</div>
+        <div class="pub-journal">PLoS ONE, 16(10): e0258288 (2021)</div>
+        <a href="https://doi.org/10.1371/journal.pone.0258288" class="pub-link" target="_blank" rel="noopener">
+          ð DOI: 10.1371/journal.pone.0258288
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ââââââââââââââââ CONTACT ââââââââââââââââ -->
+<section id="contacto" class="section-alt">
+  <div class="section-inner">
+    <div class="title-bar">
+      <h2 class="section-title" data-es="Contacto" data-en="Contact">Contacto</h2>
+    </div>
+    <p class="section-subtitle" data-es="InformaciÃ³n de contacto e instituciones financiadoras" data-en="Contact information and funding institutions">InformaciÃ³n de contacto e instituciones financiadoras</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3 style="color:var(--primary); margin-bottom:1.2rem; font-size:1rem;" data-es="Investigador Principal" data-en="Principal Investigator">Investigador Principal</h3>
+        <div class="contact-detail">
+          <span class="c-icon">ð¤</span>
+          <div>
+            <strong>Jorge Gaete</strong><br/>
+            <span style="font-size:0.88rem; color:var(--text-muted);" data-es="Psiquiatra e investigador" data-en="Psychiatrist and researcher">Psiquiatra e investigador</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <span class="c-icon">ðï¸</span>
+          <div style="font-size:0.9rem;">
+            Centro de InvestigaciÃ³n en Salud Mental Estudiantil (ISME)<br/>
+            <span data-es="Escuela de EducaciÃ³n, Facultad de Ciencias Sociales" data-en="School of Education, Faculty of Social Sciences">Escuela de EducaciÃ³n, Facultad de Ciencias Sociales</span><br/>
+            Universidad de los Andes, Chile
+          </div>
+        </div>
+        <div class="contact-detail">
+          <span class="c-icon">ð</span>
+          <div>
+            <a href="https://jegaete.github.io" target="_blank" rel="noopener" style="font-size:0.9rem;">jegaete.github.io</a>
+          </div>
+        </div>
+      </div>
+      <div class="funding-box">
+        <h3 data-es="Financiamiento" data-en="Funding">Financiamiento</h3>
+        <div class="funder-row">
+          <div class="funder-dot"></div>
+          <div>
+            <strong data-es="ANID â Fondecyt Regular" data-en="ANID â Fondecyt Regular">ANID â Fondecyt Regular</strong><br/>
+            <span style="font-size:0.82rem; color:var(--text-muted);" data-es="Proyecto NÂº 1181724 Â· US$ 378.000" data-en="Project NÂº 1181724 Â· US$ 378,000">Proyecto NÂº 1181724 Â· US$ 378.000</span>
+          </div>
+        </div>
+        <hr style="border:none; border-top:1px solid var(--border); margin:1rem 0;"/>
+        <p style="font-size:0.85rem; color:var(--text-muted);" data-es="Para consultas sobre el programa o el proyecto de investigaciÃ³n, puede contactarnos a travÃ©s del sitio web institucional." data-en="For inquiries about the program or research project, please contact us through the institutional website.">Para consultas sobre el programa o el proyecto de investigaciÃ³n, puede contactarnos a travÃ©s del sitio web institucional.</p>
+        <div style="display:flex; gap:0.7rem; flex-wrap:wrap; margin-top:1rem;">
+          <a href="https://clinicaltrials.gov/study/NCT04236999" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.8rem; padding:0.5rem 1rem;">NCT04236999</a>
+          <a href="https://clinicaltrials.gov/study/NCT04566627" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.8rem; padding:0.5rem 1rem; border-color:var(--accent); color:var(--accent);">NCT04566627</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ââââââââââââââââ FOOTER ââââââââââââââââ -->
+<footer>
+  <p>
+    <span data-es="Proyecto Fondecyt Regular NÂº 1181724 Â· ANID, Chile" data-en="Fondecyt Regular Project NÂº 1181724 Â· ANID, Chile">Proyecto Fondecyt Regular NÂº 1181724 Â· ANID, Chile</span>
+    &nbsp;Â·&nbsp;
+    <a href="https://jegaete.github.io" target="_blank" rel="noopener">jegaete.github.io</a>
+  </p>
+  <p style="margin-top:0.4rem; font-size:0.75rem; opacity:0.6;">
+    "Yo SÃ© Lo Que Quiero" â Unplugged Chile
+  </p>
+</footer>
+
+<!-- ââââââââââââââââ JS ââââââââââââââââ -->
+<script>
+  let currentLang = 'es';
+
+  function toggleLang() {
+    currentLang = currentLang === 'es' ? 'en' : 'es';
+    applyLang();
+  }
+
+  function applyLang() {
+    const btn = document.getElementById('langToggle');
+    btn.textContent = currentLang === 'es' ? 'EN' : 'ES';
+    document.documentElement.lang = currentLang;
+
+    document.querySelectorAll('[data-es]').forEach(el => {
+      const text = el.getAttribute('data-' + currentLang);
+      if (!text) return;
+      if (text.includes('<') || text.includes('&lt;')) {
+        el.innerHTML = text.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+      } else {
+        el.textContent = text;
+      }
+    });
+  }
+
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('open');
+  }
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+</script>
+</body>
+</html>
